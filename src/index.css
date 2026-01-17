@@ -4,68 +4,70 @@
 
 @layer base {
   :root {
-    --background: 230 50% 10%;
-    --foreground: 0 0% 88%;
+    --background: 220 20% 4%;
+    --foreground: 210 20% 95%;
 
-    --card: 230 45% 12%;
-    --card-foreground: 0 0% 88%;
+    --card: 220 20% 7%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 230 45% 12%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 220 20% 7%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 160 100% 50%;
-    --primary-foreground: 230 50% 10%;
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 20% 4%;
 
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 230 50% 10%;
+    --secondary: 260 80% 65%;
+    --secondary-foreground: 220 20% 4%;
 
-    --muted: 230 30% 18%;
-    --muted-foreground: 0 0% 69%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 210 10% 55%;
 
-    --accent: 160 100% 50%;
-    --accent-foreground: 230 50% 10%;
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 20% 4%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 160 100% 31% / 0.2;
-    --input: 160 100% 31% / 0.2;
-    --ring: 160 100% 50%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 200 100% 60%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(160 100% 50%), hsl(195 100% 50%));
-    --shadow-glow: 0 10px 40px hsl(160 100% 50% / 0.2);
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 60%), hsl(260 80% 65%));
+    --gradient-subtle: linear-gradient(135deg, hsl(200 100% 60% / 0.1), hsl(260 80% 65% / 0.1));
+    --shadow-glow: 0 0 40px hsl(200 100% 60% / 0.15);
+    --shadow-glow-strong: 0 0 60px hsl(200 100% 60% / 0.25);
   }
 
   .dark {
-    --background: 230 50% 10%;
-    --foreground: 0 0% 88%;
+    --background: 220 20% 4%;
+    --foreground: 210 20% 95%;
 
-    --card: 230 45% 12%;
-    --card-foreground: 0 0% 88%;
+    --card: 220 20% 7%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 230 45% 12%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 220 20% 7%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 160 100% 50%;
-    --primary-foreground: 230 50% 10%;
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 20% 4%;
 
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 230 50% 10%;
+    --secondary: 260 80% 65%;
+    --secondary-foreground: 220 20% 4%;
 
-    --muted: 230 30% 18%;
-    --muted-foreground: 0 0% 69%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 210 10% 55%;
 
-    --accent: 160 100% 50%;
-    --accent-foreground: 230 50% 10%;
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 20% 4%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 160 100% 31% / 0.2;
-    --input: 160 100% 31% / 0.2;
-    --ring: 160 100% 50%;
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 200 100% 60%;
   }
 }
 
@@ -74,9 +76,13 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
   }
 }
 
@@ -90,12 +96,69 @@
     background-image: var(--gradient-primary);
   }
 
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
   .glow-shadow {
     box-shadow: var(--shadow-glow);
   }
 
+  .glow-shadow-strong {
+    box-shadow: var(--shadow-glow-strong);
+  }
+
   .glass-card {
-    @apply bg-card/50 backdrop-blur-md border border-primary/10 rounded-2xl;
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-lg;
+  }
+
+  .futuristic-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-lg;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.5) 100%);
+  }
+
+  .code-block {
+    @apply bg-muted/50 rounded-md px-3 py-1 text-sm font-mono;
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .terminal-text {
+    @apply font-mono text-primary;
+  }
+
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.5), transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
   }
 
   .animate-float {
@@ -106,25 +169,29 @@
     animation: float 6s ease-in-out infinite 2s;
   }
 
-  .animate-float-delayed-2 {
-    animation: float 6s ease-in-out infinite 4s;
-  }
-
-  .grid-overlay {
-    background-image:
-      linear-gradient(hsl(160 100% 50% / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(160 100% 50% / 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 20s linear infinite;
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
   }
 
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-10px); }
   }
 
-  @keyframes gridMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
