@@ -32,7 +32,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <a href="#" className="flex items-center gap-2 text-primary">
               <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span className="font-mono font-bold text-sm sm:text-base">christopher.dev</span>
+              <span className="font-mono font-bold text-sm sm:text-base">essindi.dev</span>
             </a>
 
             {/* Desktop Navigation */}

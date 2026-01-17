@@ -30,17 +30,17 @@ const Hero = () => {
               Hello, World! I'm
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Christopher Morgan
+              Essindi Essindi Yvan Stephane
             </h1>
             <div className="font-mono text-lg sm:text-xl md:text-2xl text-muted-foreground">
-              <span className="text-primary">&gt;</span> Full-Stack Developer
+              <span className="text-primary">&gt;</span> Junior Full-Stack Developer
               <span className="animate-pulse">_</span>
             </div>
           </div>
 
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
-            Computer Engineering student with proven expertise in full-stack development, 
-            mobile applications, and digital marketing. Building scalable web and mobile 
+            Computer Engineering student with proven expertise in full-stack development,
+            mobile applications, and digital marketing. Building scalable web and mobile
             solutions using modern frameworks.
           </p>
 

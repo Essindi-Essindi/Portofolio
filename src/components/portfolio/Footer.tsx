@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <a href="#" className="inline-flex items-center gap-2 text-primary mb-2">
               <Terminal className="w-5 h-5" />
-              <span className="font-mono font-bold">christopher.dev</span>
+              <span className="font-mono font-bold">essindi.dev</span>
             </a>
             <p className="text-xs sm:text-sm text-muted-foreground font-mono">
               Building the future, one commit at a time

@@ -81,7 +81,7 @@ const Contact = () => {
                     href="tel:+442076668555"
                     className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +44 (0)20 7666 8555
+                    +(237) 653353093/680921972
                   </a>
                 </div>
               </div>
@@ -93,7 +93,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-mono font-semibold text-sm sm:text-base mb-1">Location</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    177 Great Portland Street, London
+                    Montee Jouvence, Yaounde Cameroon
                   </p>
                 </div>
               </div>
@@ -167,7 +167,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-muted/50 border border-border rounded focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors font-mono text-sm"
-                  placeholder="john@example.com"
+                  placeholder="stpeh@example.com"
                 />
               </div>
             </div>

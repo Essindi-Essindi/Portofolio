@@ -19,11 +19,11 @@ const skillCategories = [
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "MySQL", "DynamoDB"],
+    skills: ["PostgreSQL", "MySQL", "DynamoDB"],
   },
   {
     title: "Tools",
-    skills: ["Git", "GitHub Actions", "Jest", "Cypress", "Figma", "Jira"],
+    skills: ["Git", "GitHub Actions", "Jest", "Cypress", "Figma", "Gitlab"],
   },
 ];
 
@@ -91,9 +91,9 @@ const Skills = () => {
           className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
         >
           {[
-            { value: "5+", label: "Years Experience" },
-            { value: "50+", label: "Projects Completed" },
-            { value: "30+", label: "Happy Clients" },
+            { value: "4+", label: "Years Experience" },
+            { value: "10+", label: "Projects Completed" },
+            // { value: "30+", label: "Happy Clients" },
             { value: "10+", label: "Technologies" },
           ].map((stat, index) => (
             <div
