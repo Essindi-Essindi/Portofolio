@@ -30,18 +30,18 @@ const Hero = () => {
               Hello, World! I'm
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Essindi Essindi
+              Christopher Morgan
             </h1>
             <div className="font-mono text-lg sm:text-xl md:text-2xl text-muted-foreground">
-              <span className="text-primary">&gt;</span> Software Engineer
+              <span className="text-primary">&gt;</span> Full-Stack Developer
               <span className="animate-pulse">_</span>
             </div>
           </div>
 
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
-            I architect and build scalable software solutions. Specialized in
-            full-stack development, cloud infrastructure, and creating elegant
-            code that solves complex problems.
+            Computer Engineering student with proven expertise in full-stack development, 
+            mobile applications, and digital marketing. Building scalable web and mobile 
+            solutions using modern frameworks.
           </p>
 
           {/* CTA Buttons */}
@@ -72,7 +72,7 @@ const Hero = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/christopher_morgan"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 sm:p-3 glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
@@ -81,7 +81,7 @@ const Hero = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:yvanstephanee@gmail.com"
               className="p-2 sm:p-3 glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
               aria-label="Email"
             >

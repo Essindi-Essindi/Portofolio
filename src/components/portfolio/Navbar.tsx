@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "../ThemeToggle";
 
 const navItems = ["About", "Skills", "Projects", "Contact"];
 
@@ -31,7 +32,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <a href="#" className="flex items-center gap-2 text-primary">
               <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span className="font-mono font-bold text-sm sm:text-base">dev.portfolio</span>
+              <span className="font-mono font-bold text-sm sm:text-base">christopher.dev</span>
             </a>
 
             {/* Desktop Navigation */}
@@ -48,21 +49,27 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <a
-              href="#contact"
-              className="hidden md:inline-flex px-4 py-2 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
-            >
-              ./contact
-            </a>
+            <div className="hidden md:flex items-center gap-3">
+              <ThemeToggle />
+              <a
+                href="#contact"
+                className="px-4 py-2 border border-primary text-primary rounded font-mono text-sm hover:bg-primary/10 transition-colors"
+              >
+                ./contact
+              </a>
+            </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-primary"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="md:hidden flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-primary"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </nav>

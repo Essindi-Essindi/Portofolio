@@ -1,42 +1,33 @@
-import { Code, Database, Cloud, Terminal, Download, FileText } from "lucide-react";
+import { Code, Database, Smartphone, Palette, Eye, FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import CVPreviewModal from "./CVPreviewModal";
 
 const highlights = [
   {
     icon: Code,
-    title: "Clean Architecture",
-    description: "Building maintainable, testable, and scalable codebases",
+    title: "Full-Stack Development",
+    description: "Building responsive web and mobile apps with React Native & TypeScript",
   },
   {
     icon: Database,
-    title: "Data Engineering",
-    description: "Designing efficient database schemas and data pipelines",
+    title: "Backend & Databases",
+    description: "Express.js, Node.js with SQL, SQLite, and MySQL integration",
   },
   {
-    icon: Cloud,
-    title: "Cloud Native",
-    description: "Deploying and managing applications on AWS, GCP, Azure",
+    icon: Smartphone,
+    title: "Mobile Applications",
+    description: "Cross-platform development using React Native and modern frameworks",
   },
   {
-    icon: Terminal,
-    title: "DevOps Culture",
-    description: "CI/CD pipelines, containerization, and infrastructure as code",
+    icon: Palette,
+    title: "UI/UX Design",
+    description: "Advanced Figma skills, creating intuitive user interfaces and dashboards",
   },
 ];
 
 const About = () => {
-  const handleDownloadCV = () => {
-    // Create a link to download the CV
-    // In production, replace this with your actual CV URL
-    const cvUrl = "/cv.pdf";
-    const link = document.createElement("a");
-    link.href = cvUrl;
-    link.download = "Essindi_Essindi_CV.pdf";
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
   return (
     <section id="about" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
@@ -65,24 +56,22 @@ const About = () => {
             className="space-y-4 sm:space-y-6"
           >
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-              I'm a software engineer with a passion for building robust,
-              scalable applications. With expertise spanning frontend frameworks,
-              backend systems, and cloud infrastructure, I bring ideas to life
-              through clean, efficient code.
+              I'm Christopher Morgan, a Computer Engineering student (4th year of 5) 
+              with proven expertise in full-stack development, mobile applications, 
+              and digital marketing. I bring ideas to life through clean, efficient code.
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-              My journey in software development started with curiosity about
-              how systems work at scale. Today, I specialize in designing
-              architectures that handle millions of users while maintaining
-              code quality and developer experience.
+              My journey in software development combines strong foundations in electronics, 
+              networking, and SEO optimization. I specialize in building scalable web and 
+              mobile solutions using modern frameworks like React Native and TypeScript.
             </p>
             <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
-              When I'm not shipping features, you'll find me contributing to
-              open-source projects, writing technical articles, or exploring
-              the latest in distributed systems.
+              I'm an adaptable problem-solver passionate about creating intuitive user 
+              experiences. When I'm not coding, you'll find me enjoying athletics, 
+              swimming, volleyball, or handball.
             </p>
 
-            {/* CV Download Section */}
+            {/* CV Preview Section */}
             <div className="pt-4 sm:pt-6">
               <div className="glass-card p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <div className="flex items-center gap-3">
@@ -90,14 +79,14 @@ const About = () => {
                   <h3 className="font-mono font-semibold text-sm sm:text-base">Curriculum Vitae</h3>
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Download my full CV to learn more about my experience, education, and skills.
+                  View my full CV to learn more about my experience, education, and skills.
                 </p>
                 <button
-                  onClick={handleDownloadCV}
+                  onClick={() => setIsCVModalOpen(true)}
                   className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 gradient-bg text-primary-foreground rounded font-mono text-xs sm:text-sm font-medium hover:glow-shadow transition-all"
                 >
-                  <Download className="w-4 h-4" />
-                  download_cv.pdf
+                  <Eye className="w-4 h-4" />
+                  preview_cv()
                 </button>
               </div>
             </div>
@@ -124,6 +113,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <CVPreviewModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
     </section>
   );
 };

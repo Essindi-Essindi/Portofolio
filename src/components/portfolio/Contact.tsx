@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -63,10 +63,25 @@ const Contact = () => {
                 <div>
                   <h3 className="font-mono font-semibold text-sm sm:text-base mb-1">Email</h3>
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:yvanstephanee@gmail.com"
                     className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@example.com
+                    yvanstephanee@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded border border-primary/30 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-mono font-semibold text-sm sm:text-base mb-1">Phone</h3>
+                  <a
+                    href="tel:+442076668555"
+                    className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    +44 (0)20 7666 8555
                   </a>
                 </div>
               </div>
@@ -78,7 +93,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-mono font-semibold text-sm sm:text-base mb-1">Location</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground">
-                    San Francisco, California
+                    177 Great Portland Street, London
                   </p>
                 </div>
               </div>
@@ -98,22 +113,13 @@ const Contact = () => {
                   <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/christopher_morgan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded border border-border bg-card hover:border-primary/50 hover:text-primary transition-all"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded border border-border bg-card hover:border-primary/50 hover:text-primary transition-all"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               </div>
             </div>
