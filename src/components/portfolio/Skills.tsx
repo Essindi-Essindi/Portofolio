@@ -1,81 +1,114 @@
-const skills = [
-  { name: "React", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "Tailwind CSS", level: 95 },
-  { name: "PostgreSQL", level: 80 },
-  { name: "Next.js", level: 88 },
-];
+import { motion } from "framer-motion";
 
-const technologies = [
-  "JavaScript",
-  "React",
-  "TypeScript",
-  "Node.js",
-  "Next.js",
-  "Tailwind CSS",
-  "PostgreSQL",
-  "MongoDB",
-  "GraphQL",
-  "REST APIs",
-  "Git",
-  "Docker",
-  "AWS",
-  "Figma",
-  "Vercel",
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: ["TypeScript", "JavaScript", "Python", "Java", "Go", "SQL"],
+  },
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Redux", "GraphQL"],
+  },
+  {
+    title: "Backend",
+    skills: ["Node.js", "Express", "NestJS", "FastAPI", "Django", "Spring Boot"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD", "Linux"],
+  },
+  {
+    title: "Databases",
+    skills: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "MySQL", "DynamoDB"],
+  },
+  {
+    title: "Tools",
+    skills: ["Git", "GitHub Actions", "Jest", "Cypress", "Figma", "Jira"],
+  },
 ];
 
 const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-32 px-6 lg:px-10 bg-gradient-to-b from-primary/5 to-secondary/5"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-black mb-6">
-            My <span className="gradient-text">Skills</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+      {/* Background */}
+      <div className="absolute inset-0 dot-bg opacity-30" />
+
+      <div className="relative max-w-6xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        >
+          <p className="font-mono text-primary text-sm sm:text-base mb-2">
+            <span className="text-muted-foreground">02.</span> Skills
           </p>
-        </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Tech <span className="gradient-text">Stack</span>
+          </h2>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Skill Bars */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold mb-8">Core Competencies</h3>
-            {skills.map((skill, index) => (
-              <div key={index} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold">{skill.name}</span>
-                  <span className="text-primary font-bold">{skill.level}%</span>
-                </div>
-                <div className="h-3 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full gradient-bg rounded-full transition-all duration-1000"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
+        {/* Skills Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={categoryIndex}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: categoryIndex * 0.1 }}
+              className="futuristic-card p-4 sm:p-5 lg:p-6"
+            >
+              <div className="flex items-center gap-2 mb-4 sm:mb-6">
+                <div className="w-2 h-2 bg-primary rounded-full" />
+                <h3 className="font-mono font-semibold text-primary text-sm sm:text-base">
+                  {category.title}
+                </h3>
               </div>
-            ))}
-          </div>
-
-          {/* Technology Tags */}
-          <div>
-            <h3 className="text-2xl font-bold mb-8">Technologies</h3>
-            <div className="flex flex-wrap gap-3">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-5 py-2.5 glass-card hover:border-primary/50 hover:scale-105 transition-all duration-300 font-medium cursor-default"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm font-mono bg-muted/50 border border-border hover:border-primary/50 hover:text-primary rounded transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
+        >
+          {[
+            { value: "5+", label: "Years Experience" },
+            { value: "50+", label: "Projects Completed" },
+            { value: "30+", label: "Happy Clients" },
+            { value: "10+", label: "Technologies" },
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className="text-center p-4 sm:p-6 glass-card"
+            >
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-1 sm:mb-2">
+                {stat.value}
+              </div>
+              <div className="text-xs sm:text-sm text-muted-foreground font-mono">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

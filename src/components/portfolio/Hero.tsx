@@ -1,99 +1,102 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20 px-4 sm:px-6">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(160_100%_50%_/_0.1)_0%,transparent_50%),radial-gradient(circle_at_80%_80%,hsl(195_100%_50%_/_0.1)_0%,transparent_50%)]" />
-      <div className="absolute inset-0 grid-overlay" />
+      <div className="absolute inset-0 grid-bg opacity-50" />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-72 sm:h-72 bg-secondary/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Text Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-primary font-medium tracking-wide">
-                Hello, I'm
-              </p>
-              <h1 className="text-5xl lg:text-7xl font-black leading-tight">
-                Essindi Essindi <span className="gradient-text">Doe</span>
-              </h1>
-              <p className="text-2xl lg:text-3xl text-muted-foreground font-medium">
-                Full Stack Developer
-              </p>
+      <div className="relative z-10 max-w-4xl mx-auto text-center py-12 sm:py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6 sm:space-y-8"
+        >
+          {/* Terminal Header */}
+          <div className="inline-block">
+            <div className="glass-card px-3 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-primary">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse-slow" />
+              <span>available for opportunities</span>
             </div>
+          </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              I build exceptional digital experiences that combine beautiful
-              design with powerful functionality. Specializing in React,
-              TypeScript, and modern web technologies.
+          {/* Main Content */}
+          <div className="space-y-3 sm:space-y-4">
+            <p className="font-mono text-primary text-sm sm:text-base">
+              Hello, World! I'm
             </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                className="px-8 py-4 gradient-bg text-primary-foreground rounded-xl font-bold text-lg hover:scale-105 hover:glow-shadow transition-all duration-300"
-              >
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                className="px-8 py-4 border-2 border-primary text-primary rounded-xl font-bold text-lg hover:bg-primary/10 transition-all duration-300"
-              >
-                Get In Touch
-              </a>
-            </div>
-
-            <div className="flex items-center gap-6 pt-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:hello@example.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Essindi Essindi
+            </h1>
+            <div className="font-mono text-lg sm:text-xl md:text-2xl text-muted-foreground">
+              <span className="text-primary">&gt;</span> Software Engineer
+              <span className="animate-pulse">_</span>
             </div>
           </div>
 
-          {/* Floating Cards Visual */}
-          <div className="relative h-[500px] hidden lg:block">
-            <div className="absolute top-0 left-0 glass-card p-8 animate-float">
-              <div className="text-5xl font-black gradient-text">5+</div>
-              <div className="text-muted-foreground mt-2">Years Experience</div>
-            </div>
-            <div className="absolute top-36 right-0 glass-card p-8 animate-float-delayed">
-              <div className="text-5xl font-black gradient-text">50+</div>
-              <div className="text-muted-foreground mt-2">Projects Done</div>
-            </div>
-            <div className="absolute bottom-0 left-12 glass-card p-8 animate-float-delayed-2">
-              <div className="text-5xl font-black gradient-text">30+</div>
-              <div className="text-muted-foreground mt-2">Happy Clients</div>
-            </div>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-4">
+            I architect and build scalable software solutions. Specialized in
+            full-stack development, cloud infrastructure, and creating elegant
+            code that solves complex problems.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
+            <a
+              href="#projects"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 gradient-bg text-primary-foreground rounded font-mono font-medium text-sm sm:text-base hover:glow-shadow transition-all duration-300"
+            >
+              view_projects()
+            </a>
+            <a
+              href="#contact"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border border-primary text-primary rounded font-mono font-medium text-sm sm:text-base hover:bg-primary/10 transition-all duration-300"
+            >
+              contact_me()
+            </a>
           </div>
-        </div>
+
+          {/* Social Links */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 sm:p-3 glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 sm:p-3 glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:hello@example.com"
+              className="p-2 sm:p-3 glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
       <a
         href="#about"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
       >
-        <ArrowDown className="w-6 h-6" />
+        <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 animate-bounce" />
       </a>
     </section>
   );
