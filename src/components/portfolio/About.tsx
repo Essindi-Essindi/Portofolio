@@ -6,7 +6,7 @@ import CVPreviewModal from "./CVPreviewModal";
 const highlights = [
   {
     icon: Code,
-    title: "Full-Stack Development",
+    title: "Full-Stack Development" ,
     description: "Building responsive web and mobile apps with React Native & TypeScript",
   },
   {
